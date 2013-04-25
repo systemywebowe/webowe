@@ -1,7 +1,15 @@
 Webowe::Application.routes.draw do
+  resources :users
+
+
   match '/home', :to =>'home#index'
   match '/', :to =>'home#index'
   match '/index', :to =>'home#index'
+  match '/test', :to =>'home#test'
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signup', :to =>'users#new'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
   
   #get "home/index"
   #root :to => 'home#index'
