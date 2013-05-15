@@ -1,0 +1,29 @@
+<h1>Listing member_teams</h1>
+
+<table>
+  <tr>
+    <th>Id memberteam</th>
+    <th>Id member</th>
+    <th>Id team</th>
+    <th>Function</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @member_teams.each do |member_team| %>
+  <tr>
+    <td><%= member_team.id_memberTeam %></td>
+    <td><%= member_team.id_member %></td>
+    <td><%= member_team.id_team %></td>
+    <td><%= member_team.function %></td>
+    <td><%= link_to 'Show', member_team %></td>
+    <td><%= link_to 'Edit', edit_member_team_path(member_team) %></td>
+    <td><%= link_to 'Destroy', member_team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Member team', new_member_team_path %>

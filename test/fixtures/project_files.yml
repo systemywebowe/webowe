@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id_file: 1
+  id_project: 1
+  source: MyString
+  description: MyString
+
+two:
+  id_file: 1
+  id_project: 1
+  source: MyString
+  description: MyString

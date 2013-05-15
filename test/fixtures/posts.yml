@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id_post: 1
+  id_project: 1
+  title: MyString
+  content: MyText
+
+two:
+  id_post: 1
+  id_project: 1
+  title: MyString
+  content: MyText

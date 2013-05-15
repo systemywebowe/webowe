@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id file:</b>
+  <%= @project_file.id_file %>
+</p>
+
+<p>
+  <b>Id project:</b>
+  <%= @project_file.id_project %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @project_file.source %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @project_file.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_file_path(@project_file) %> |
+<%= link_to 'Back', project_files_path %>

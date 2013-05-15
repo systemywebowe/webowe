@@ -1,4 +1,40 @@
 Webowe::Application.routes.draw do
+  resources :partner_projects
+
+
+  resources :sponsor_projects
+
+
+  resources :partners
+
+
+  resources :sponsors
+
+
+  resources :awards
+
+
+  resources :posts
+
+
+  resources :project_files
+
+
+  resources :categories
+
+
+  resources :projects
+
+
+  resources :member_teams
+
+
+  resources :teams
+
+
+  resources :members
+
+
   resources :users
 
 

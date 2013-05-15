@@ -15,8 +15,6 @@ body
    background-color: #FFFFFF;
    color: #000000;
 }
-</style>
-<style type="text/css">
 a
 {
    color: #0000FF;
@@ -35,8 +33,6 @@ a:hover
    color: #0000FF;
    text-decoration: underline;
 }
-</style>
-<style type="text/css">
 #SlideMenu1 ul
 {
    list-style: none;
@@ -126,8 +122,8 @@ a:hover
    bottom: 0;
    left: 0;
    position: absolute;
-   text-align: center;;
-   vertical-align: middle;;
+   text-align: center;
+   vertical-align: middle;
    width: 415px;
    z-index: 999;
 }

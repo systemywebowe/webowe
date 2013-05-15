@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id_partner: 1
+  name: MyString
+  info: MyText
+
+two:
+  id_partner: 1
+  name: MyString
+  info: MyText
