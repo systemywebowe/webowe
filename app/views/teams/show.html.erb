@@ -4,6 +4,17 @@
   <b>Info:</b>
   <%= @team.info %>
 </p>
+<p>
+  <b>Members:</b> </br>
+  <% @members.each do |member_team| %>
+    <%= member_team.function %> </br>
+    <%= member_team.member.name %> </br>
+    <%= member_team.member.surname %> </br>
+    <%= image_tag member_team.member.photo %></br>
+      
+    </br></br>
+<% end %>
+</p>
 
 
 <%= link_to 'Edit', edit_team_path(@team) %> |

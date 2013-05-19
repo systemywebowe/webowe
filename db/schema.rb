@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130519154602) do
+ActiveRecord::Schema.define(:version => 20130519161153) do
 
   create_table "awards", :force => true do |t|
     t.string   "name"
@@ -48,8 +48,12 @@ ActiveRecord::Schema.define(:version => 20130519154602) do
     t.string   "surname"
     t.string   "info"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "partner_projects", :force => true do |t|
@@ -70,8 +74,12 @@ ActiveRecord::Schema.define(:version => 20130519154602) do
     t.string   "title"
     t.text     "content"
     t.integer  "project_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "projects", :force => true do |t|

@@ -9,6 +9,11 @@
   <b>Content:</b>
   <%= @post.content %>
 </p>
+<p>
+  <b>Photo:</b></br>
+  <%= image_tag @post.photo %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

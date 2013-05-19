@@ -19,5 +19,25 @@
   <%= @project.category.name %>
 </p>
 
+<p>
+  <b>Awards:</b> </br>
+  <% @awards.each do |post| %>
+    <%= post.name %> </br>
+    <%= post.info %></br>    
+    </br></br></br>
+<% end %>
+</p>
+<p>
+  <b>Posts:</b> </br>
+  <% @posts.each do |post| %>
+    <%= post.updated_at %> </br>
+    <%= post.title %> </br>
+    <%= post.content %></br>    
+    <%= image_tag post.photo %></br>
+    </br></br></br>
+<% end %>
+</table>
+</p>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
