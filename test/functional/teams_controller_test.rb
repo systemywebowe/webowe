@@ -18,7 +18,7 @@ class TeamsControllerTest < ActionController::TestCase
 
   test "should create team" do
     assert_difference('Team.count') do
-      post :create, team: { id_project: @team.id_project, id_team: @team.id_team }
+      post :create, team: { info: @team.info }
     end
 
     assert_redirected_to team_path(assigns(:team))
@@ -35,7 +35,7 @@ class TeamsControllerTest < ActionController::TestCase
   end
 
   test "should update team" do
-    put :update, id: @team, team: { id_project: @team.id_project, id_team: @team.id_team }
+    put :update, id: @team, team: { info: @team.info }
     assert_redirected_to team_path(assigns(:team))
   end
 

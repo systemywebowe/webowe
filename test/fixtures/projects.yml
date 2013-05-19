@@ -1,15 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  id_project: 1
   name: MyString
-  shortDesc: MyText
+  short_desc: MyString
   description: MyText
-  id_category: 1
 
 two:
-  id_project: 1
   name: MyString
-  shortDesc: MyText
+  short_desc: MyString
   description: MyText
-  id_category: 1

@@ -1,4 +1,4 @@
 class Category < ActiveRecord::Base
-  attr_accessible :id_cetegory, :name
+  attr_accessible :name
   has_many :projects
 end

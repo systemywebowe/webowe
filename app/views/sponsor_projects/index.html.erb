@@ -2,9 +2,6 @@
 
 <table>
   <tr>
-    <th>Id sponsorproject</th>
-    <th>Id sponsor</th>
-    <th>Id project</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,9 +9,6 @@
 
 <% @sponsor_projects.each do |sponsor_project| %>
   <tr>
-    <td><%= sponsor_project.id_sponsorProject %></td>
-    <td><%= sponsor_project.id_sponsor %></td>
-    <td><%= sponsor_project.id_project %></td>
     <td><%= link_to 'Show', sponsor_project %></td>
     <td><%= link_to 'Edit', edit_sponsor_project_path(sponsor_project) %></td>
     <td><%= link_to 'Destroy', sponsor_project, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,5 +1,5 @@
 class PartnerProject < ActiveRecord::Base
-  attr_accessible :id_partner, :id_partnerProject, :id_project
-  belongs_to :partner
+  attr_accessible :project_id, :partner_id
   belongs_to :project
+  belongs_to :partner
 end

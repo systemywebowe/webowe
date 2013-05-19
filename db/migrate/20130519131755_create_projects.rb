@@ -1,11 +1,10 @@
 class CreateProjects < ActiveRecord::Migration
   def change
     create_table :projects do |t|
-      t.integer :id_project, :primary_key
       t.string :name
-      t.text :shortDesc
+      t.string :short_desc
       t.text :description
-      t.integer :id_category
+      t.references :category
 
       t.timestamps
     end

@@ -1,15 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  id_award: 1
-  id_project: 1
   name: MyString
-  content: MyText
-  from: MyString
+  info: MyText
 
 two:
-  id_award: 1
-  id_project: 1
   name: MyString
-  content: MyText
-  from: MyString
+  info: MyText

@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Id member:</b>
-  <%= @member.id_member %>
-</p>
-
-<p>
   <b>Name:</b>
   <%= @member.name %>
 </p>
@@ -16,20 +11,9 @@
 </p>
 
 <p>
-  <b>Description:</b>
-  <%= @member.description %>
+  <b>Info:</b>
+  <%= @member.info %>
 </p>
-
-<p>
-  <b>Id user:</b>
-  <%= @member.id_user %>
-</p>
-
-<p>
-  <b>Avatar:</b> </br>
-  <%= image_tag @member.photo.url %>
-</p>
-
 
 
 <%= link_to 'Edit', edit_member_path(@member) %> |

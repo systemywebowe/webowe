@@ -18,7 +18,7 @@ class AwardsControllerTest < ActionController::TestCase
 
   test "should create award" do
     assert_difference('Award.count') do
-      post :create, award: { content: @award.content, from: @award.from, id_award: @award.id_award, id_project: @award.id_project, name: @award.name }
+      post :create, award: { info: @award.info, name: @award.name }
     end
 
     assert_redirected_to award_path(assigns(:award))
@@ -35,7 +35,7 @@ class AwardsControllerTest < ActionController::TestCase
   end
 
   test "should update award" do
-    put :update, id: @award, award: { content: @award.content, from: @award.from, id_award: @award.id_award, id_project: @award.id_project, name: @award.name }
+    put :update, id: @award, award: { info: @award.info, name: @award.name }
     assert_redirected_to award_path(assigns(:award))
   end
 

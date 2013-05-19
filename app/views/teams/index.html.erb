@@ -2,8 +2,7 @@
 
 <table>
   <tr>
-    <th>Id team</th>
-    <th>Id project</th>
+    <th>Info</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +10,7 @@
 
 <% @teams.each do |team| %>
   <tr>
-    <td><%= team.id_team %></td>
-    <td><%= team.id_project %></td>
+    <td><%= team.info %></td>
     <td><%= link_to 'Show', team %></td>
     <td><%= link_to 'Edit', edit_team_path(team) %></td>
     <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>

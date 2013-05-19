@@ -1,5 +1,4 @@
 class Award < ActiveRecord::Base
-  attr_accessible :content, :from, :id_award, :id_project, :name
+  attr_accessible :info, :name, :project_id
   belongs_to :project
-  
 end

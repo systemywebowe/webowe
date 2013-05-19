@@ -12,24 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id_project %><br />
-    <%= f.number_field :id_project %>
-  </div>
-  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :shortDesc %><br />
-    <%= f.text_area :shortDesc %>
+    <%= f.label :short_desc %><br />
+    <%= f.text_field :short_desc %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :id_category %><br />
-    <%= f.number_field :id_category %>
+    <%= f.label :category_id %><br />
+    <%= f.collection_select(:category_id, @categories, :id, :name) %>
   </div>
   <div class="actions">
     <%= f.submit %>

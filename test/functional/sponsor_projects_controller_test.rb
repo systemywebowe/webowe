@@ -18,7 +18,7 @@ class SponsorProjectsControllerTest < ActionController::TestCase
 
   test "should create sponsor_project" do
     assert_difference('SponsorProject.count') do
-      post :create, sponsor_project: { id_project: @sponsor_project.id_project, id_sponsor: @sponsor_project.id_sponsor, id_sponsorProject: @sponsor_project.id_sponsorProject }
+      post :create, sponsor_project: {  }
     end
 
     assert_redirected_to sponsor_project_path(assigns(:sponsor_project))
@@ -35,7 +35,7 @@ class SponsorProjectsControllerTest < ActionController::TestCase
   end
 
   test "should update sponsor_project" do
-    put :update, id: @sponsor_project, sponsor_project: { id_project: @sponsor_project.id_project, id_sponsor: @sponsor_project.id_sponsor, id_sponsorProject: @sponsor_project.id_sponsorProject }
+    put :update, id: @sponsor_project, sponsor_project: {  }
     assert_redirected_to sponsor_project_path(assigns(:sponsor_project))
   end
 

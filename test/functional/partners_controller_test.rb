@@ -18,7 +18,7 @@ class PartnersControllerTest < ActionController::TestCase
 
   test "should create partner" do
     assert_difference('Partner.count') do
-      post :create, partner: { id_partner: @partner.id_partner, info: @partner.info, name: @partner.name }
+      post :create, partner: { info: @partner.info, name: @partner.name }
     end
 
     assert_redirected_to partner_path(assigns(:partner))
@@ -35,7 +35,7 @@ class PartnersControllerTest < ActionController::TestCase
   end
 
   test "should update partner" do
-    put :update, id: @partner, partner: { id_partner: @partner.id_partner, info: @partner.info, name: @partner.name }
+    put :update, id: @partner, partner: { info: @partner.info, name: @partner.name }
     assert_redirected_to partner_path(assigns(:partner))
   end
 

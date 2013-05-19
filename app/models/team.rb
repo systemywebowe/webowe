@@ -1,4 +1,6 @@
 class Team < ActiveRecord::Base
-  attr_accessible :id_project, :id_team
-  has_many :projects, :member_teams
+  attr_accessible :info
+  has_many :projects
+  has_many :member_teams
+  
 end

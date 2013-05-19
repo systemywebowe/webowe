@@ -25,6 +25,7 @@ class SponsorsController < ApplicationController
   # GET /sponsors/new.json
   def new
     @sponsor = Sponsor.new
+    @projects = Project.all
 
     respond_to do |format|
       format.html # new.html.erb

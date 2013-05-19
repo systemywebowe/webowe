@@ -1,5 +1,5 @@
 class MemberTeam < ActiveRecord::Base
-  attr_accessible :function, :id_member, :id_memberTeam, :id_team
-  belongs_to :member
+  attr_accessible :function, :team_id, :member_id
   belongs_to :team
+  belongs_to :member
 end

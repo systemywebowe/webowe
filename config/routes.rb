@@ -1,4 +1,7 @@
 Webowe::Application.routes.draw do
+  resources :file_projects
+
+
   resources :partner_projects
 
 

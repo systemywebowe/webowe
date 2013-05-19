@@ -25,6 +25,7 @@ class AwardsController < ApplicationController
   # GET /awards/new.json
   def new
     @award = Award.new
+    @projects = Project.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,6 +35,7 @@ class AwardsController < ApplicationController
 
   # GET /awards/1/edit
   def edit
+    @projects = Project.all
     @award = Award.find(params[:id])
   end
 

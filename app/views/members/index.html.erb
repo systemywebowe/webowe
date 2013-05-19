@@ -2,11 +2,9 @@
 
 <table>
   <tr>
-    <th>Id member</th>
     <th>Name</th>
     <th>Surname</th>
-    <th>Description</th>
-    <th>Id user</th>
+    <th>Info</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,11 +12,9 @@
 
 <% @members.each do |member| %>
   <tr>
-    <td><%= member.id_member %></td>
     <td><%= member.name %></td>
     <td><%= member.surname %></td>
-    <td><%= member.description %></td>
-    <td><%= member.id_user %></td>
+    <td><%= member.info %></td>
     <td><%= link_to 'Show', member %></td>
     <td><%= link_to 'Edit', edit_member_path(member) %></td>
     <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>

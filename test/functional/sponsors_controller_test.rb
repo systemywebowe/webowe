@@ -18,7 +18,7 @@ class SponsorsControllerTest < ActionController::TestCase
 
   test "should create sponsor" do
     assert_difference('Sponsor.count') do
-      post :create, sponsor: { id_sponsor: @sponsor.id_sponsor, info: @sponsor.info, name: @sponsor.name }
+      post :create, sponsor: { info: @sponsor.info, name: @sponsor.name }
     end
 
     assert_redirected_to sponsor_path(assigns(:sponsor))
@@ -35,7 +35,7 @@ class SponsorsControllerTest < ActionController::TestCase
   end
 
   test "should update sponsor" do
-    put :update, id: @sponsor, sponsor: { id_sponsor: @sponsor.id_sponsor, info: @sponsor.info, name: @sponsor.name }
+    put :update, id: @sponsor, sponsor: { info: @sponsor.info, name: @sponsor.name }
     assert_redirected_to sponsor_path(assigns(:sponsor))
   end
 
