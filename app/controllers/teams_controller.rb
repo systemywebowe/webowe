@@ -26,6 +26,7 @@ class TeamsController < ApplicationController
   # GET /teams/new.json
   def new
     @team = Team.new
+    @projects = Project.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +37,7 @@ class TeamsController < ApplicationController
   # GET /teams/1/edit
   def edit
     @team = Team.find(params[:id])
+    @projects = Project.all
   end
 
   # POST /teams

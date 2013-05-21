@@ -16,6 +16,8 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @posts = @project.posts
     @awards = @project.awards
+    @sponsors = @project.sponsors
+    @partners = @project.partners
 
     respond_to do |format|
       format.html # show.html.erb

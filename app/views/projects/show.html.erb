@@ -21,18 +21,36 @@
 
 <p>
   <b>Awards:</b> </br>
-  <% @awards.each do |post| %>
-    <%= post.name %> </br>
-    <%= post.info %></br>    
+  <% @awards.each do |award| %>
+    <%= award.name %> </br>
+    <%= award.info %></br>    
     </br></br></br>
 <% end %>
 </p>
+
+<p>
+  <b>Sponsors:</b> </br>
+  <% @sponsors.each do |sponsor| %>
+    <%= sponsor.name %> </br>
+    <%= sponsor.info %></br>    
+    </br></br></br>
+<% end %>
+</p>
+
+<p>
+  <b>Partners:</b> </br>
+  <% @partners.each do |partner| %>
+    <%= partner.name %> </br>
+    <%= partner.info %></br>    
+    </br></br></br>
+<% end %>
+</p>
+
 <p>
   <b>Posts:</b> </br>
   <% @posts.each do |post| %>
     <%= post.updated_at %> </br>
-    <%= post.title %> </br>
-    <%= post.content %></br>    
+    <%= link_to post.title, "http://localhost:3000/posts/"+post.id.to_s %> </br> 
     <%= image_tag post.photo %></br>
     </br></br></br>
 <% end %>
