@@ -25,6 +25,16 @@ class MembersController < ApplicationController
   # GET /members/new.json
   def new
     @member = Member.new
+    @users = User.all
+    @members = Member.all
+    @members.each do |mem|
+      if !mem.user_id.nil?
+        @user = User.find(mem.user_id)
+        @users.delete(@user)
+      end
+       
+    end
+    
 
     respond_to do |format|
       format.html # new.html.erb

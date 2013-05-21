@@ -20,6 +20,11 @@
 </p>
 
 <p>
+  <%= link_to "Team", "http://localhost:3000/teams/"+@project.getTeamId.to_s %> </br> 
+  <%=  %>
+</p>
+
+<p>
   <b>Awards:</b> </br>
   <% @awards.each do |award| %>
     <%= award.name %> </br>

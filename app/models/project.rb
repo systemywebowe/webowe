@@ -10,7 +10,10 @@ class Project < ActiveRecord::Base
   has_many :file_projects
   has_many :posts
   
-  
+  def getTeamId ()
+    @team = Team.where("project_id = ?", self.id).first
+    @team.id
+  end
   
   
 end
