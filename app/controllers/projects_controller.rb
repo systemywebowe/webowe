@@ -18,6 +18,9 @@ class ProjectsController < ApplicationController
     @awards = @project.awards
     @sponsors = @project.sponsors
     @partners = @project.partners
+    @team = Team.where("project_id = ?", @project.id).first
+    @members = @team.member_teams
+    
 
     respond_to do |format|
       format.html # show.html.erb
