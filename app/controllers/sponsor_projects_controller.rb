@@ -14,6 +14,8 @@ class SponsorProjectsController < ApplicationController
   # GET /sponsor_projects/1.json
   def show
     @sponsor_project = SponsorProject.find(params[:id])
+    @project = @sponsor_project.project 
+    @sponsor = @sponsor_project.sponsor 
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,7 +27,8 @@ class SponsorProjectsController < ApplicationController
   # GET /sponsor_projects/new.json
   def new
     @sponsor_project = SponsorProject.new
-
+    @sponsors = Sponsor.all
+    @projects = Project.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @sponsor_project }

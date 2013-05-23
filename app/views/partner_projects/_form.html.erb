@@ -10,6 +10,16 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">
+    <%= f.label :partner_id %><br />
+    <%= f.collection_select(:partner_id, @partners, :id, :name) %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :project_id %><br />
+    <%= f.collection_select(:project_id, @projects, :id, :name) %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

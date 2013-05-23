@@ -1,5 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <b>Sponsor:</b>
+  <%= @sponsor.name %>
+</p>
+
+<p>
+  <b>Projects:</b>
+  <%= @project.name %>
+</p>
 
 <%= link_to 'Edit', edit_sponsor_project_path(@sponsor_project) %> |
 <%= link_to 'Back', sponsor_projects_path %>

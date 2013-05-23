@@ -19,10 +19,6 @@
     <%= f.label :info %><br />
     <%= f.text_field :info %>
   </div>
-  <div class="field">
-    <%= f.label :project_id %><br />
-    <%= f.collection_select(:id, @projects, :id, :name) %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

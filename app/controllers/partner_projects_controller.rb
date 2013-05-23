@@ -14,7 +14,9 @@ class PartnerProjectsController < ApplicationController
   # GET /partner_projects/1.json
   def show
     @partner_project = PartnerProject.find(params[:id])
-
+    @project = @partner_project.project 
+    @partner = @partner_project.partner 
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @partner_project }
@@ -25,6 +27,8 @@ class PartnerProjectsController < ApplicationController
   # GET /partner_projects/new.json
   def new
     @partner_project = PartnerProject.new
+    @partners = Partner.all
+    @projects = Project.all
 
     respond_to do |format|
       format.html # new.html.erb
