@@ -18,14 +18,48 @@
   <b>Category:</b>
   <%= @project.category.name %>
 </p>
+ <%= @mem %>
+ <%= @project.team.id %>
+
+<% if @mem %>
+<p>
+	<% if signed_in? %>
+	
+	<% @members.each do |member_team| %>
+    <% if member_team.member.id==current_user.getMemberId %>
+    <%= form_tag(new_post_path, :method => "post") do %>
+	<%= hidden_field_tag(:project_id, @project.id) %>
+  <%= submit_tag("New Post") %>
+    <% end %>
+      
+<% end %>
+  
+  <% end %>
+<% end %>
+</p>
+<% end %>
 
 <p>
-  <%= link_to "Team", "http://localhost:3000/teams/"+@project.getTeamId.to_s %> </br> 
+
+	<%= form_tag('/repo', :method => "post") do %>
+	<%= hidden_field_tag(:project_id, @project.id) %>
+  <%= submit_tag("Repository") %>
+    <% end %>
+</p>
+
+<% if !@project.team.nil? %>
+<p>
+  <%= link_to "Team", "http://localhost:3000/teams/"+@project.team.id.to_s %> </br> 
   <%=  %>
 </p>
+<% end %>
+
+
+<% if @mem %>
 <p>
   <b>Members:</b> </br>
   <% @members.each do |member_team| %>
+  
     <%= member_team.function %> </br>
     <%= member_team.member.name %> </br>
     <%= member_team.member.surname %> </br>
@@ -34,6 +68,7 @@
     </br></br>
 <% end %>
 </p>
+<% end %>
 
 <p>
   <b>Awards:</b> </br>

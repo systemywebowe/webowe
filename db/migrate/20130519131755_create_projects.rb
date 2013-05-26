@@ -5,6 +5,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :short_desc
       t.text :description
       t.references :category
+      t.reference :team
 
       t.timestamps
     end

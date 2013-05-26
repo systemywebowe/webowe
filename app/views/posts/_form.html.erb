@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+<% if signed_in? %>
 
   <div class="field">
     <%= f.label :title %><br />
@@ -23,7 +24,12 @@
     <%= f.label :photo %><br />
     <%= f.file_field :photo %>
   </div>
+  <div class="field">
+    <%= f.hidden_field :project_id %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
+  <% end %>
 <% end %>

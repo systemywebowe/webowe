@@ -27,6 +27,10 @@
     <%= f.label :category_id %><br />
     <%= f.collection_select(:category_id, @categories, :id, :name) %>
   </div>
+  <div class="field">
+    <%= f.label :team_id %><br />
+    <%= f.collection_select(:team_id, @teams, :id, :info) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

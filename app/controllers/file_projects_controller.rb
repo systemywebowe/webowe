@@ -25,7 +25,7 @@ class FileProjectsController < ApplicationController
   # GET /file_projects/new.json
   def new
     @file_project = FileProject.new
-
+  @file_project.project_id = params[:project_id]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @file_project }

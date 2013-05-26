@@ -15,6 +15,7 @@ class TeamsController < ApplicationController
   def show
     @team = Team.find(params[:id])
     @members = @team.member_teams
+    @projects = Project.where("team_id = ?", @team.id)
 
     respond_to do |format|
       format.html # show.html.erb

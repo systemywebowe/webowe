@@ -1,0 +1,33 @@
+<h1>Listing teams</h1>
+
+<table>
+  <tr>
+    <th>Info</th>
+    <th>Download</th>
+  </tr>
+
+<% @file_projects.each do |file_project| %>
+  <tr>
+    <td><%= file_project.info %></td>
+    <td><a href= <%= file_project.pfile %>>Download</a></td>
+  </tr>
+<% end %>
+</table>
+
+<p>
+	<% if signed_in? %>
+	<% @members.each do |member_team| %>
+    <% if member_team.member.id==current_user.getMemberId %>
+    <%= form_tag(new_file_project_path, :method => "post") do %>
+	<%= hidden_field_tag(:project_id, params[:project_id]) %>
+  <%= submit_tag("Resource") %>
+    <% end %>
+      
+<% end %>
+  
+  <% end %>
+<% end %>
+</p>
+
+<br />
+<%= link_to 'Back', project_path(:id => params[:project_id]) %>
