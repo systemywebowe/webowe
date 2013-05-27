@@ -15,6 +15,10 @@
     <%= f.label :function %><br />
     <%= f.text_field :function %>
   </div>
+  <div class="field">
+    <%= f.label :member_id %><br />
+    <%= f.collection_select(:member_id, @members, :id, :surname) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
