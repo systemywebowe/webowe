@@ -7,24 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @award.name %>
-</p>
-
-<p>
-  <b>Info:</b>
-  <%= @award.info %>
-</p>
-
-<p>
-  <b>Project:</b>
-  <%= @award.project.name %>
-</p>
-
+	<center>
+	<center>
+<p><%= notice %></p>
+	<table style="margin-left:5; background-color: #eee">
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
+  <b>Name:</b>  <%= @award.name %></br>
+  <b>Info:</b>  <%= @award.info %></br>
+  <b>Project:</b>  <%= @award.project.name %>
+		</td></tr></table></td></tr>
+	</table>
 <%= link_to 'Edit', edit_award_path(@award) %> |
 <%= link_to 'Back', awards_path %>
+</center>
 </body>
 </html>
