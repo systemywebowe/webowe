@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
     self.password==pass
   end
   
+  
   def getMember ()
     @member = Member.where("user_id = ?", self.id).first
     if @member.nil?
@@ -14,4 +15,14 @@ class User < ActiveRecord::Base
       @member.surname
     end
   end
+  
+  def getMemberId ()
+    @member = Member.where("user_id = ?", self.id).first
+    if @member.nil?
+      -1
+    else 
+      @member.id
+    end
+  end
+  
 end

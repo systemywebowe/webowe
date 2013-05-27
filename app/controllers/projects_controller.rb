@@ -15,12 +15,17 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @posts = @project.posts
+    @posts.reverse!
     @awards = @project.awards
     @sponsors = @project.sponsors
     @partners = @project.partners
     @team = Team.where("project_id = ?", @project.id).first
+    @mem = false
+    if !@team.nil?
     @members = @team.member_teams
-    
+    @mem = true
+  end    
+  puts @mem
 
     respond_to do |format|
       format.html # show.html.erb
@@ -33,6 +38,7 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @categories = Category.all
+    @teams = Team.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,6 +50,7 @@ class ProjectsController < ApplicationController
   def edit
     @project = Project.find(params[:id])
     @categories = Category.all
+    @teams = Team.all
   end
 
   # POST /projects

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Webowe</title>
+  <%= stylesheet_link_tag    "main", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<h1>Editing file_project</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @file_project %> |
+<%= link_to 'Back', file_projects_path %>
+</body>
+</html>

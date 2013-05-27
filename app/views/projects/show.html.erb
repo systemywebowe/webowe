@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<center>
+<!--><center>
 	<table style="margin-left:5; background-color: #eee">
 	<tr style="width:500">
 	<td>
@@ -17,19 +17,19 @@
   			<b>Name:</b>
   			<%= @project.name %>
   			<br>
-		  	<b>Category:</b>
-  			<%= @project.category.name %>
+			<b>Category:</b>
+  <%= @project.category.name %>
 		</td></tr>
-<!--		<tr style="background-color: #fff"><td>
+		<tr style="background-color: #fff"><td>
  		 	<b>Short desc:</b><br>
 	  		<%= @project.short_desc %>
 		</td></tr>
--->		<tr style="background-color: #fff"><td>
+		<tr style="background-color: #fff"><td>
 		  	<b>Description:</b><br>
   			<%= @project.description %>
 		</td></tr>
 		<tr style="background-color: #fff"><td>
-<!--		  	<%= link_to "Team", "http://localhost:3000/teams/"+@project.getTeamId.to_s %> </br> --> 
+		  	<%= link_to "Team", "http://localhost:3000/teams/"+@project.getTeamId.to_s %> </br> 
   			<b>Members:</b> </br>
   			<% @members.each do |member_team| %>
     		<%= member_team.function %> </br>
@@ -60,30 +60,132 @@
 		  	<b>Awards:</b> </br>
   			<% @awards.each do |award| %>
     		<%= award.name %> </br>
-<!--    		<%= award.info %></br> -->   
+    		<%= award.info %></br>   
 			<% end %>
 		</td></tr>
 		<tr style="background-color: #fff"><td>
 		  	<b>Sponsors:</b> </br>
   			<% @sponsors.each do |sponsor| %>
     		<%= sponsor.name %> </br>
-<!--    		<%= sponsor.info %></br> -->    
+    		<%= sponsor.info %></br>    
 			<% end %>
 		</td></tr>
 		<tr style="background-color: #fff"><td>
 		  	<b>Partners:</b> </br>
   			<% @partners.each do |partner| %>
     		<%= partner.name %> </br>
-<!--    		<%= partner.info %></br> -->    
+    		<%= partner.info %></br>    
 			<% end %>
 		</td></tr>
-	</table>
 	</td>
 	</tr>
+	</table>
+	</center>
+	</body>	</html>
+-->	
+
+
+
+
+
+
+<p>
+  <b>Description:</b>
+  <%= @project.description %>
+</p>
+<p>
+</p>
+ <%= @mem %>
+ <%= @project.team.id %>
+
+<% if @mem %>
+<p>
+	<% if signed_in? %>
+	
+	<% @members.each do |member_team| %>
+    <% if member_team.member.id==current_user.getMemberId %>
+    <%= form_tag(new_post_path, :method => "post") do %>
+	<%= hidden_field_tag(:project_id, @project.id) %>
+  <%= submit_tag("New Post") %>
+    <% end %>
+      
+<% end %>
+  
+  <% end %>
+<% end %>
+</p>
+<% end %>
+
+<p>
+
+	<%= form_tag('/repo', :method => "post") do %>
+	<%= hidden_field_tag(:project_id, @project.id) %>
+  <%= submit_tag("Repository") %>
+    <% end %>
+</p>
+
+<% if !@project.team.nil? %>
+<p>
+  <%= link_to "Team", "http://localhost:3000/teams/"+@project.team.id.to_s %> </br> 
+  <%=  %>
+</p>
+<% end %>
+
+
+<% if @mem %>
+<p>
+  <b>Members:</b> </br>
+  <% @members.each do |member_team| %>
+  
+    <%= member_team.function %> </br>
+    <%= member_team.member.name %> </br>
+    <%= member_team.member.surname %> </br>
+    <%= image_tag member_team.member.photo %></br>
+      
+    </br></br>
+<% end %>
+</p>
+<% end %>
+
+<p>
+  <b>Awards:</b> </br>
+  <% @awards.each do |award| %>
+    <%= award.name %> </br>
+    <%= award.info %></br>    
+    </br></br></br>
+<% end %>
+</p>
+
+<p>
+  <b>Sponsors:</b> </br>
+  <% @sponsors.each do |sponsor| %>
+    <%= sponsor.name %> </br>
+    <%= sponsor.info %></br>    
+    </br></br></br>
+<% end %>
+</p>
+
+<p>
+  <b>Partners:</b> </br>
+  <% @partners.each do |partner| %>
+    <%= partner.name %> </br>
+    <%= partner.info %></br>    
+    </br></br></br>
+<% end %>
+</p>
+
+<p>
+  <b>Posts:</b> </br>
+  <% @posts.each do |post| %>
+    <%= post.updated_at %> </br>
+    <%= link_to post.title, "http://localhost:3000/posts/"+post.id.to_s %> </br> 
+    <%= image_tag post.photo %></br>
+    </br></br></br>
+<% end %>
 </table>
-	</p>	
-	<%= link_to 'Edit', edit_project_path(@project) %> |
-	<%= link_to 'Back', projects_path %>
-</center>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
 </body>
 </html>

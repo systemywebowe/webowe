@@ -1,4 +1,9 @@
 Webowe::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
+
+  
   resources :file_projects
 
 
@@ -39,16 +44,21 @@ Webowe::Application.routes.draw do
 
 
   resources :users
-
-
+  
+  
+  match 'posts/new' => 'posts#new', :via => [:get, :post]
+  match '/repo' => 'repo#index', :via => [:get, :post]
+  match '/repo/new' => 'repo#new', :via => [:get, :post]
+  match 'member_teams/new' => 'member_teams#new', :via => [:get, :post]
+  match '/file_projects/new' => 'file_projects#new', :via => [:get, :post]
   match '/home', :to =>'home#index'
   match '/', :to =>'home#index'
   match '/index', :to =>'home#index'
-  match '/test', :to =>'home#test'
+  match '/test', :to =>'test#test.html'
   resources :sessions, only: [:new, :create, :destroy]
   match '/signup', :to =>'users#new'
   match '/signin',  to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/signout', to: 'sessions#destroy'
   
   #get "home/index"
   #root :to => 'home#index'

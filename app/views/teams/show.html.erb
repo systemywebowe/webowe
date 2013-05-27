@@ -13,6 +13,22 @@
   <b>Info:</b>
   <%= @team.info %>
 </p>
+
+<p>
+	<% if signed_in? %>
+	<%= @mem = Member.where("user_id = ?", current_user.id).first %>
+	<% if !@mem.nil? %>
+	<%= @member_team = MemberTeam.where("member_id = ? and team_id = ?", @mem.id, @team.id).first %>
+	<% if !@member_team.nil? && @member_team.function == "lider" %>
+	<%= form_tag(new_member_team_path, :method => "post") do %>
+	<%= hidden_field_tag(:team_id, @team.id) %>
+  	<%= submit_tag("New Member") %>
+	<% end %>
+	<% end %>
+	<% end %>
+	<% end %>
+</p>
+
 <p>
   <b>Members:</b> </br>
   <% @members.each do |member_team| %>
@@ -25,8 +41,17 @@
 <% end %>
 </p>
 
+<p>
+  <b>Projects:</b> </br>
+  <% @projects.each do |project| %>
+    <%= link_to project.name, project_path(:id => project.id) %>
 
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+      
+    </br></br>
+<% end %>
+</p>
+
+
+
 </body>
 </html>

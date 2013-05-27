@@ -20,6 +20,7 @@
       </ul>
     </div>
   <% end %>
+<!--
 	<table>
 		<tr><td style="text-align: right">
   			<div class="field">
@@ -42,6 +43,28 @@
 	  		</div>
    		</td></tr>
    		</table>
+-->
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :short_desc %><br />
+    <%= f.text_field :short_desc %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br />
+    <%= f.collection_select(:category_id, @categories, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :team_id %><br />
+    <%= f.collection_select(:team_id, @teams, :id, :info) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
