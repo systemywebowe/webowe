@@ -6,20 +6,25 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body><p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @sponsor.name %>
-</p>
-
-<p>
-  <b>Info:</b>
-  <%= @sponsor.info %>
-</p>
-
-
+<body>
+	<center>
+	<p><%= notice %></p>
+	<table style="margin-left:5; background-color: #eee">
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
+  <b>Name:</b> <%= @sponsor.name %>
+		</td></tr></table></td></tr>
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
+  <b>Info:</b> <%= @sponsor.info %>
+		</td></tr></table></td></tr>
+	</table>
 <%= link_to 'Edit', edit_sponsor_path(@sponsor) %> |
 <%= link_to 'Back', sponsors_path %>
+	</center>
 </body>
 </html>

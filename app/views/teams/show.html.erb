@@ -7,14 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Info:</b>
-  <%= @team.info %>
-</p>
-
-<p>
+	<center>
+<p><%= notice %></p>
+	<table style="margin-left:5; background-color: #eee">
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
+  <b>Info:</b> <%= @team.info %>
+		</td></tr></table></td></tr>
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
 	<% if signed_in? %>
 	<%= @mem = Member.where("user_id = ?", current_user.id).first %>
 	<% if !@mem.nil? %>
@@ -27,31 +32,29 @@
 	<% end %>
 	<% end %>
 	<% end %>
-</p>
-
-<p>
+		</td></tr></table></td></tr>
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
   <b>Members:</b> </br>
   <% @members.each do |member_team| %>
     <%= member_team.function %> </br>
     <%= member_team.member.name %> </br>
     <%= member_team.member.surname %> </br>
     <%= image_tag member_team.member.photo %></br>
-      
-    </br></br>
 <% end %>
-</p>
-
-<p>
+		</td></tr></table></td></tr>
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
   <b>Projects:</b> </br>
   <% @projects.each do |project| %>
     <%= link_to project.name, project_path(:id => project.id) %>
-
-      
-    </br></br>
 <% end %>
-</p>
-
-
-
+		</td></tr></table></td></tr>
+	</table>
+	</center>
 </body>
 </html>

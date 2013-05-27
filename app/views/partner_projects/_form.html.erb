@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<center>
 <%= form_for(@partner_project) do |f| %>
   <% if @partner_project.errors.any? %>
     <div id="error_explanation">
@@ -19,20 +20,18 @@
       </ul>
     </div>
   <% end %>
-  
-  <div class="field">
-    <%= f.label :partner_id %><br />
-    <%= f.collection_select(:partner_id, @partners, :id, :name) %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :project_id %><br />
-    <%= f.collection_select(:project_id, @projects, :id, :name) %>
-  </div>
-
+	<table>
+		<tr><td style="text-align: right">
+    <%= f.label :partner_id %></td><td style="text-align: left"><%= f.collection_select(:partner_id, @partners, :id, :name) %>
+		</td></tr>
+		<tr><td style="text-align: right">
+    <%= f.label :project_id %></td><td style="text-align: left"><%= f.collection_select(:project_id, @projects, :id, :name) %>
+   		</td></tr>
+   		</table>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</center>
 </body>
 </html>

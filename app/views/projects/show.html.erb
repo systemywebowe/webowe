@@ -7,88 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<!--><center>
-	<table style="margin-left:5; background-color: #eee">
-	<tr style="width:500">
-	<td>
-	<table>
-		<tr style="background-color: #fff"><td>
+<center>
+<p>
 			<%= notice %>
   			<b>Name:</b>
   			<%= @project.name %>
   			<br>
 			<b>Category:</b>
   <%= @project.category.name %>
-		</td></tr>
-		<tr style="background-color: #fff"><td>
+  </p>
+<p>
  		 	<b>Short desc:</b><br>
 	  		<%= @project.short_desc %>
-		</td></tr>
-		<tr style="background-color: #fff"><td>
-		  	<b>Description:</b><br>
-  			<%= @project.description %>
-		</td></tr>
-		<tr style="background-color: #fff"><td>
-		  	<%= link_to "Team", "http://localhost:3000/teams/"+@project.getTeamId.to_s %> </br> 
-  			<b>Members:</b> </br>
-  			<% @members.each do |member_team| %>
-    		<%= member_team.function %> </br>
-    		<%= member_team.member.name %> </br>
-    		<%= member_team.member.surname %> </br>
-    		<%= image_tag member_team.member.photo %></br>    
-			<% end %>
-		</td></tr>
-		<tr style="background-color: #fff"><td>
-		  	<b>Posts:</b> </br>
-			<table style="width:480px;height:42px;z-index:2;" cellpadding="0" cellspacing="0" id="Table2" border="1">
-			<tr style="background-color:transparent;background-image:url(/images/table_head_bg.png);background-repeat:repeat-x;background-position:left top;border:1px #87CEEB solid;text-align:left;vertical-align:top;width:66px;height:18px;">
-			<td>Title</td><td>Date</td><td>Thumb</td>
-  			<% @posts.each do |post| %>
-			<tr style="background-color:#FFFFFF;border: 1px #87CEEB solid;text-align:left;vertical-align:top">
-     		<td><%= link_to post.title, "http://localhost:3000/posts/"+post.id.to_s %> </td>
-       		<td><%= post.updated_at %></td>
-    		<td><%= image_tag post.photo %></td>
-    		</tr>
-			<% end %>
-			</table>
-	</td></tr>
-	</table>
-	</td>
-	<td>
-	<table>
-		<tr style="background-color: #fff"><td>
-		  	<b>Awards:</b> </br>
-  			<% @awards.each do |award| %>
-    		<%= award.name %> </br>
-    		<%= award.info %></br>   
-			<% end %>
-		</td></tr>
-		<tr style="background-color: #fff"><td>
-		  	<b>Sponsors:</b> </br>
-  			<% @sponsors.each do |sponsor| %>
-    		<%= sponsor.name %> </br>
-    		<%= sponsor.info %></br>    
-			<% end %>
-		</td></tr>
-		<tr style="background-color: #fff"><td>
-		  	<b>Partners:</b> </br>
-  			<% @partners.each do |partner| %>
-    		<%= partner.name %> </br>
-    		<%= partner.info %></br>    
-			<% end %>
-		</td></tr>
-	</td>
-	</tr>
-	</table>
-	</center>
-	</body>	</html>
--->	
-
-
-
-
-
-
+</p>
 <p>
   <b>Description:</b>
   <%= @project.description %>
@@ -187,5 +118,6 @@
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
+</center>
 </body>
 </html>

@@ -6,35 +6,30 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body><p id="notice"><%= notice %></p>
+<body>
+	<center>
+			<p><%= notice %></p>
+			<% if signed_in? %>
+	<table style="margin-left:5; background-color: #eee">
+	<tr style="width:500">
+	<td>
 	<table>
 		<tr style="background-color: #fff"><td>
-<p id="notice"><%= notice %></p>
-<% if signed_in? %>
-<p>
-  <b>Login:</b>
-  <%= @user.login %>
-</p>
-
-<p>
-  <b>Password:</b>
-  <%= @user.password %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-<p>
+  <b>Login:</b> <%= @user.login %><br>
+  <b>Password:</b> <%= @user.password %><br>
+  <b>Email:</b> <%= @user.email %>
+		</td></tr></table></td></tr>
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
   <b>Member:</b>
   <%= @user.getMember %>
-</p>
-
-
+		</td></tr></table></td></tr>
+	</table>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 <% end %>
-
+</center>
 </body>
 </html>

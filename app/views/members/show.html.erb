@@ -7,30 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @member.name %>
-</p>
-
-<p>
-  <b>Surname:</b>
-  <%= @member.surname %>
-</p>
-
-<p>
+	<center>
+<p><%= notice %></p>
+	<table style="margin-left:5; background-color: #eee">
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
+  <b>Name:</b> <%= @member.name %><br>
+  <b>Surname:</b> <%= @member.surname %>
+		</td></tr></table></td></tr>
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
   <b>Info:</b>
   <%= @member.info %>
-</p>
-
-<p>
+		</td></tr></table></td></tr>
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
   <b>Avatar:</b></br>
   <%= image_tag @member.photo %>
-</p>
-
-
+		</td></tr></table></td></tr>
+	</table>
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>
+</center>
 </body>
 </tml>

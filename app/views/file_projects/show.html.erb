@@ -7,31 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Webowe</title>
-  <%= stylesheet_link_tag    "main", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Info:</b>
-  <%= @file_project.info %>
-</p>
-
-<p>
+	<center>
+<p><%= notice %></p>
+	<table style="margin-left:5; background-color: #eee">
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
+  <b>Info:</b> <%= @file_project.info %><br>
   <b>File:</b></br>
   <a href= <%= @file_project.pfile %>>Download</a>
-</p>
-
-
+		</td></tr></table></td></tr>
+	</table>
 <%= link_to 'Edit', edit_file_project_path(@file_project) %> |
 <%= link_to 'Back', file_projects_path %>
-</body>
-</html>
+<>/center>
 </body>
 </html>

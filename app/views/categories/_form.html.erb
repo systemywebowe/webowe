@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<center>
 <%= form_for(@category) do |f| %>
   <% if @category.errors.any? %>
     <div id="error_explanation">
@@ -19,14 +20,15 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+	<table>
+		<tr><td style="text-align: right">
+    <%= f.label :name %></td><td style="text-align: left"><%= f.text_field :name %>
+   		</td></tr>
+   		</table>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</center>
 </body>
 </html>

@@ -1,1 +1,25 @@
-Failed to acquire lock for git repository.
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Webowe</title>
+  <%= stylesheet_link_tag    "main", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<center>
+<p><%= notice %></p>
+	<table style="margin-left:5; background-color: #eee">
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
+  <b>Title:</b> <%= @post.title %></br>
+  <b>Content:</b> <%= @post.content %><br>
+  <b>Photo:</b></br> <%= image_tag @post.photo %>
+		</td></tr></table></td></tr>
+	</table>
+<%= link_to 'Back', project_path(:id => @post.project.id) %>
+</center>
+</body>
+</html>

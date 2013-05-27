@@ -7,15 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p id="notice"><%= notice %></p>
-
-<p>
+	<center>
+<p><%= notice %></p>
+	<table style="margin-left:5; background-color: #eee">
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
   <b>Function:</b>
   <%= @member_team.function %>
-</p>
-
-
+		</td></tr></table></td></tr>
+	</table>
 <%= link_to 'Edit', edit_member_team_path(@member_team) %> |
 <%= link_to 'Back', member_teams_path %>
+</center>
 </body>
 </html>

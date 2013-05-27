@@ -6,20 +6,21 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body><p id="notice"><%= notice %></p>
-
-<p>
+<body>
+	<center>
+<p><%= notice %></p>
+	<table style="margin-left:5; background-color: #eee">
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
   <b>Partner:</b>
-  <%= @partner.name %>
-</p>
-
-<p>
+  <%= @partner.name %><br>
   <b>Projects:</b>
   <%= @project.name %>
-</p>
-
-
+		</td></tr></table></td></tr>
+	</table>
 <%= link_to 'Edit', edit_partner_project_path(@partner_project) %> |
 <%= link_to 'Back', partner_projects_path %>
-</body>
+</centercenter></body>
 </html>
