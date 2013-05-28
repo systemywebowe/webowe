@@ -21,9 +21,9 @@
 	<table>
 		<tr style="background-color: #fff"><td>
 	<% if signed_in? %>
-	<%= @mem = Member.where("user_id = ?", current_user.id).first %>
+	<% @mem = Member.where("user_id = ?", current_user.id).first %>
 	<% if !@mem.nil? %>
-	<%= @member_team = MemberTeam.where("member_id = ? and team_id = ?", @mem.id, @team.id).first %>
+	<% @member_team = MemberTeam.where("member_id = ? and team_id = ?", @mem.id, @team.id).first %>
 	<% if !@member_team.nil? && @member_team.function == "lider" %>
 	<%= form_tag(new_member_team_path, :method => "post") do %>
 	<%= hidden_field_tag(:team_id, @team.id) %>
