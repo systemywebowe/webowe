@@ -44,7 +44,7 @@ class FileProjectsController < ApplicationController
 
     respond_to do |format|
       if @file_project.save
-        format.html { redirect_to @file_project, notice: 'File project was successfully created.' }
+        format.html { redirect_to @file_project.project, notice: 'File project was successfully created.' }
         format.json { render json: @file_project, status: :created, location: @file_project }
       else
         format.html { render action: "new" }

@@ -25,6 +25,9 @@ class MemberTeamsController < ApplicationController
   # GET /member_teams/new.json
   def new
     @member_team = MemberTeam.new
+    @members = Member.all
+    @member_team.team_id = params[:team_id]
+    
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +47,7 @@ class MemberTeamsController < ApplicationController
 
     respond_to do |format|
       if @member_team.save
-        format.html { redirect_to @member_team, notice: 'Member team was successfully created.' }
+        format.html { redirect_to 'projects/3', notice: 'Member was successfully added.' }
         format.json { render json: @member_team, status: :created, location: @member_team }
       else
         format.html { render action: "new" }

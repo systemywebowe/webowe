@@ -31,6 +31,9 @@
     <%= f.label :email %></td><td style="text-align: left"><%= f.text_field :email %>
    		</td></tr>
    		</table>
+  <% if current_user.getMemberId != -1%>
+  <%= link_to "New Member", new_member_path %>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

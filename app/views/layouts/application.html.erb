@@ -12,6 +12,8 @@
 		<%= link_to image_tag('/images/banner.jpg'), '/home' %><br>
 		<% if signed_in? %>
 		Logged as: <%= current_user.login %> <%= link_to "My account", edit_user_path(current_user) %> | <%= link_to "Logout", '/signout' %>
+        <%= link_to "Profile", edit_user_path(current_user) %> | 
+        <%= link_to "Logout", '/signout' %>
         <% else %>
         <%= link_to "Register", new_user_path%> | <%= link_to "Login", signin_path %>
         <% end %>
