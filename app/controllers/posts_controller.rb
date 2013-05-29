@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @categories = Category.all
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,6 +27,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @post.project_id = params[:project_id]
+    @categories = Category.all
 
     respond_to do |format|
       format.html # new.html.erb

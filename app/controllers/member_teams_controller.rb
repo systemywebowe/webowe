@@ -25,6 +25,7 @@ class MemberTeamsController < ApplicationController
   # GET /member_teams/new.json
   def new
     @member_team = MemberTeam.new
+    @categories = Category.all
     @members = Member.all
     @member_team.team_id = params[:team_id]
     

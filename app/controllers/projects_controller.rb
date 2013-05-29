@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
     @awards = @project.awards
     @sponsors = @project.sponsors
     @partners = @project.partners
+    @categories = Category.all  
     @team = Team.where("project_id = ?", @project.id).first
     @mem = false
     if !@team.nil?

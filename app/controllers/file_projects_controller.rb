@@ -3,6 +3,7 @@ class FileProjectsController < ApplicationController
   # GET /file_projects.json
   def index
     @file_projects = FileProject.all
+    @partners = @project.partners
 
     respond_to do |format|
       format.html # index.html.erb

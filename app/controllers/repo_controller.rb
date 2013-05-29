@@ -5,6 +5,7 @@ class RepoController < ApplicationController
     @project = Project.find(params[:project_id])
     @team = Team.where("project_id = ?", @project.id).first
     @members = @team.member_teams
+    @categories = Category.all
 
     respond_to do |format|
       format.html # index.html.erb

@@ -3,6 +3,7 @@ class MembersController < ApplicationController
   # GET /members.json
   def index
     @members = Member.all
+    @categories = Category.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,6 +28,7 @@ class MembersController < ApplicationController
     @member = Member.new
     @users = User.all
     @members = Member.all
+    @categories = Category.all
     @members.each do |mem|
       if !mem.user_id.nil?
         @user = User.find(mem.user_id)
@@ -54,7 +56,7 @@ class MembersController < ApplicationController
 
     respond_to do |format|
       if @member.save
-        format.html { redirect_to 'home', notice: 'Member was successfully created.' }
+        format.html { redirect_to '/home', notice: 'Member was successfully created.' }
         format.json { render json: @member, status: :created, location: @member }
       else
         format.html { render action: "new" }

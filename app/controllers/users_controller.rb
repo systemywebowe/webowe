@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @categories = Category.all
     #@member = Member.where("user_id = ?", @user.id).first
 
     respond_to do |format|
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+    @categories = Category.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +37,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @categories = Category.all
     @user = User.find(params[:id])
   end
 
