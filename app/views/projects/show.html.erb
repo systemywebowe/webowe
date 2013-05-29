@@ -7,28 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<center>
-<p>
-			<%= notice %>
-  			<b>Name:</b>
-  			<%= @project.name %>
-  			<br>
-			<b>Category:</b>
-  <%= @project.category.name %>
-  </p>
-<p>
- 		 	<b>Short desc:</b><br>
-	  		<%= @project.short_desc %>
-</p>
-<p>
-  <b>Description:</b>
-  <%= @project.description %>
-</p>
-<p>
-</p>
- <%= @mem %>
- <%= @project.team.id %>
-
+	<center>
+<p><%= notice %></p>
+	<table style="margin-left:5; background-color: #eee">
+	<tr style="width:500">
+	<td>
+	<table>
+		<tr style="background-color: #fff"><td>
+  			<b>Name:</b> <%= @project.name %><br>
+			<b>Category:</b> <%= @project.category.name %><br>
+		 	<b>Short desc:</b><br> <%= @project.short_desc %><br>
+  			<b>Description:</b> <%= @project.description %><br>
 <% if @mem %>
 <p>
 	<% if signed_in? %>
@@ -46,9 +35,7 @@
 <% end %>
 </p>
 <% end %>
-
-<p>
-
+  			
 	<%= form_tag('/repo', :method => "post") do %>
 	<%= hidden_field_tag(:project_id, @project.id) %>
   <%= submit_tag("Repository") %>
@@ -73,51 +60,43 @@
     <%= member_team.member.surname %> </br>
     <%= image_tag(member_team.member.photo, :size => "150x150") %></br>
       
-    </br></br>
+    </br>
 <% end %>
 </p>
 <% end %>
+  <b>Posts:</b> </br>
+  <table><tr><td>
+  <% @posts.each do |post| %>
+    <%= post.updated_at %> </br>
+    <%= link_to post.title, "http://localhost:3000/posts/"+post.id.to_s %></td><td> 
+    <%= image_tag(post.photo, :size => "150x150") %>
+    </br>
+<% end %>
+</td></tr></table>
 
-<p>
+		</td></tr></table></td>
+		<td>
+		
+		
+	<table>
+		<tr style="background-color: #fff"><td>
   <b>Awards:</b> </br>
   <% @awards.each do |award| %>
     <%= award.name %> </br>
     <%= award.info %></br>    
-    </br></br></br>
-<% end %>
-</p>
-
-<p>
+<% end %><br>
   <b>Sponsors:</b> </br>
   <% @sponsors.each do |sponsor| %>
     <%= sponsor.name %> </br>
     <%= sponsor.info %></br>    
-    </br></br></br>
-<% end %>
-</p>
-
-<p>
+<% end %><br>
   <b>Partners:</b> </br>
   <% @partners.each do |partner| %>
     <%= partner.name %> </br>
     <%= partner.info %></br>    
-    </br></br></br>
 <% end %>
-</p>
-
-<p>
-  <b>Posts:</b> </br>
-  <% @posts.each do |post| %>
-    <%= post.updated_at %> </br>
-    <%= link_to post.title, "http://localhost:3000/posts/"+post.id.to_s %> </br> 
-    <%= image_tag(post.photo, :size => "150x150") %></br>
-    </br></br></br>
-<% end %>
-</table>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+		</td></tr></table>	
+		</td></tr></table	
 </center>
 </body>
 </html>

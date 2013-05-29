@@ -24,18 +24,6 @@
      <tr><td style="vertical-align:top">
      	MENU
 <div id="SlideMenu1">
-<ul>
-	<% @categories.each do |category| %>
-  <li class="SlideMenu1_Folder"><div><a><%= category.name %></a></div><span><!-- empty --></span>
-      <ul>
-      	<% @projects = category.projects%>
-      	<% @projects.each do |project| %>
-      		<li><%= link_to project.name, project_path(project.id) %> </li>
-      	<% end %>
-      </ul>
-   </li>
-<% end %>   
-</ul>
 </div>
      </td><td width="600px">
 <%= yield %>
