@@ -29,7 +29,7 @@
 	<table>
 		<tr style="background-color: #fff"><td>
   <b>Avatar:</b></br>
-  <%= image_tag @member.photo %>
+  <%= image_tag(@member.photo, :size => "150x150") %>
 		</td></tr></table></td></tr>
 	</table>
 <%= link_to 'Edit', edit_member_path(@member) %> |

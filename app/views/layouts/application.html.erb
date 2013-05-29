@@ -11,8 +11,8 @@
 	<table style="text-align:center"><tr style="background-color: white"><td colspan="2" style="text-align: right">
 		<%= link_to image_tag('/images/banner.jpg'), '/home' %><br>
 		<% if signed_in? %>
-		Logged as: <%= current_user.login %> <%= link_to "My account", edit_user_path(current_user) %> | <%= link_to "Logout", '/signout' %>
-        <%= link_to "Profile", edit_user_path(current_user) %> | 
+		Logged as: <b><%= current_user.login %></b>
+        <%= link_to "Profile", user_path(current_user) %> | 
         <%= link_to "Logout", '/signout' %>
         <% else %>
         <%= link_to "Register", new_user_path%> | <%= link_to "Login", signin_path %>
@@ -23,7 +23,20 @@
      </td></tr>
      <tr><td style="vertical-align:top">
      	MENU
-
+<div id="SlideMenu1">
+<ul>
+	<% @categories.each do |category| %>
+  <li class="SlideMenu1_Folder"><div><a><%= category.name %></a></div><span><!-- empty --></span>
+      <ul>
+      	<% @projects = category.projects%>
+      	<% @projects.each do |project| %>
+      		<li><%= link_to project.name, project_path(project.id) %> </li>
+      	<% end %>
+      </ul>
+   </li>
+<% end %>   
+</ul>
+</div>
      </td><td width="600px">
 <%= yield %>
 </td></tr>

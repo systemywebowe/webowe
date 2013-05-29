@@ -71,7 +71,7 @@
     <%= member_team.function %> </br>
     <%= member_team.member.name %> </br>
     <%= member_team.member.surname %> </br>
-    <%= image_tag member_team.member.photo %></br>
+    <%= image_tag(member_team.member.photo, :size => "150x150") %></br>
       
     </br></br>
 <% end %>
@@ -110,7 +110,7 @@
   <% @posts.each do |post| %>
     <%= post.updated_at %> </br>
     <%= link_to post.title, "http://localhost:3000/posts/"+post.id.to_s %> </br> 
-    <%= image_tag post.photo %></br>
+    <%= image_tag(post.photo, :size => "150x150") %></br>
     </br></br></br>
 <% end %>
 </table>
